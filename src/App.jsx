@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import About from './Components/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import About from './Components/About.jsx';
+import Projects from './pages/Projects.jsx';
+import Contact from './pages/Contact.jsx';
 import { AnimatePresence } from 'framer-motion';
-import Main from './pages/Main';
-import Navbar from './components/Navbar';
+import Main from './pages/Main.jsx';
+import Navbar from './components/Navbar.jsx';
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
