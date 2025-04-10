@@ -1,17 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
 import About from './Components/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 import Main from './pages/Main';
-
+import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <Navbar />
+      <Navbar/>
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<Main/>} />
