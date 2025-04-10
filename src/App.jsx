@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
+import Navbar from './Components/Navbar.jsx';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
