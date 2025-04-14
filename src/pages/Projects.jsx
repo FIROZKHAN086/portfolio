@@ -31,7 +31,7 @@ const Projects = () => {
     {
       title: 'Movie App ',
       description: 'A full-featured Movie App  with payment integration and admin dashboard.',
-      image: './src/assets/img/Img.png',
+      image: '/img/Img.png',
       technologies: ['React', 'Node.js', 'MongoDB'],
       github: '#',
       live: 'https://filmy-vila.vercel.app/',
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: 'E-commerce Platform', 
       description: 'A collaborative E-clication with real-time updates.',
-      image: './src/assets/img/Img1.png',
+      image: '/img/Img1.png',
       technologies: ['React', 'Node js', 'Tailwind CSS'],
       github: '#',
       live: 'https://r-bangels.vercel.app/',
@@ -47,7 +47,7 @@ const Projects = () => {
     {
       title: 'E-commerce Platform|| Clothing Store',
       description: 'A collaborative E-clication with real-time updates. clothing store',
-      image: './src/assets/img/Img2.png', 
+      image: '/img/Img2.png', 
       technologies: ['React', 'Node js', 'Tailwind CSS', 'MongoDB', 'Express'],
       github: '#',
       live: 'https://clothing-rust.vercel.app/',
@@ -55,7 +55,7 @@ const Projects = () => {
     {
       title: 'Food Delivery App',
       description: 'A collaborative Food Delivery App with real-time updates.',
-      image: './src/assets/img/Img3.png',
+      image: '/img/Img3.png',
       technologies: ['html', 'css', 'javascript'],
       github: '#',
       live: 'https://zoapto.netlify.app/',

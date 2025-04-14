@@ -1,9 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaArrowDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
+import Message from '../Components/Message';
 
 const AbstractScene = () => {
   return (
@@ -57,6 +58,9 @@ const AbstractScene = () => {
 };
 
 const HomePage = () => {
+
+  const [show, setShow] = useState(false)
+
   const letterVariants = {
     hidden: { y: 50, opacity: 0 },
     visible: { 
@@ -68,6 +72,16 @@ const HomePage = () => {
         stiffness: 200
       }
     }
+  };
+
+  const Gettouch = () => {
+    window.scrollTo({
+      top: "80%", // Set the vertical position (adjust as needed)
+      behavior: "smooth"
+    });
+  };
+  const toggleMessage = () => {
+    setShow(!show); // Toggle the state between true and false
   };
 
   const nameArray = "FIROZ KHAN".split("");
@@ -159,14 +173,17 @@ const HomePage = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={toggleMessage}
               className="px-10 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full text-lg font-semibold shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-all duration-300 backdrop-blur-lg"
             >
               Explore Work
+              {show==true ? <Message/> : ""}
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-gradient-to-r from-transparent to-transparent border-2 border-violet-500 text-white rounded-full text-lg font-semibold hover:bg-violet-500/10 transition-all duration-300 backdrop-blur-lg"
+              onClick={Gettouch}
+              className="px-10 cursor-pointer py-4 bg-gradient-to-r from-transparent to-transparent border-2 border-violet-500 text-white rounded-full text-lg font-semibold hover:bg-violet-500/10 transition-all duration-300 backdrop-blur-lg"
             >
               Get in Touch
             </motion.button>

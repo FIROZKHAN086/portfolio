@@ -34,6 +34,7 @@ const Contact = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+      
     }));
   };
 
@@ -69,7 +70,7 @@ const Contact = () => {
     {
       icon: <FaEnvelope className="text-2xl" />,
       title: 'Email',
-      value: 'your.email@example.com',
+      value: 'firozkhan192006@gmail.com',
     },
     {
       icon: <FaPhone className="text-2xl" />,
@@ -79,7 +80,7 @@ const Contact = () => {
     {
       icon: <FaMapMarkerAlt className="text-2xl" />,
       title: 'Location',
-      value: 'New York, USA',
+      value: 'Rajsthan , (India)',
     },
   ];
 
