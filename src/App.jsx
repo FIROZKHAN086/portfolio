@@ -6,6 +6,7 @@ import About from './Components/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
+import Main from './pages/Main';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Navbar />
         <AnimatePresence mode="wait">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
