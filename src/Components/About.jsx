@@ -1,11 +1,10 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaDatabase, FaMobile, FaServer } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment, Float } from '@react-three/drei';
 import Lenis from '@studio-freight/lenis';
-import { useEffect } from 'react';
 
 const BackgroundScene = () => {
   return (
@@ -72,6 +71,17 @@ const About = () => {
     }
 
     requestAnimationFrame(raf);
+
+    // Add event listener to scroll smoothly using Lenis
+    const handleScroll = () => {
+      lenis.scrollTo(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const containerVariants = {
@@ -99,7 +109,9 @@ const About = () => {
     { name: 'Frontend Development', icon: <FaCode />, level: 90 },
     { name: 'Backend Development', icon: <FaServer />, level: 85 },
     { name: 'Database Management', icon: <FaDatabase />, level: 80 },
-    { name: 'Mobile Development', icon: <FaMobile />, level: 75 },
+    { name: 'Full Stack Development', icon: <FaCode />, level: 90 },
+    { name: 'Web applications', icon: <FaCode />, level: 80 },
+    { name: 'Mobile Development', icon: <FaMobile />, level: 60 },
   ];
 
   return (
@@ -223,38 +235,6 @@ const About = () => {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          {[
-            { number: "5+", text: "Years Experience" },
-            { number: "50+", text: "Projects Completed" },
-            { number: "30+", text: "Happy Clients" }
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05, y: -5 }}
-              className="backdrop-blur-lg bg-white/5 rounded-2xl p-8 text-center transform transition-all duration-300 hover:bg-white/10"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: index * 0.2 }}
-            >
-              <motion.h3 
-                className="text-4xl font-['Poppins'] font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-3"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  textShadow: ["0 0 0px rgba(139, 92, 246, 0)", "0 0 20px rgba(139, 92, 246, 0.5)", "0 0 0px rgba(139, 92, 246, 0)"]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                {item.number}
-              </motion.h3>
-              <p className="text-gray-300 font-['Inter']">{item.text}</p>
-            </motion.div>
-          ))}
         </motion.div>
       </motion.div>
     </div>

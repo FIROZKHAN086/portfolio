@@ -58,8 +58,7 @@ const AbstractScene = () => {
 };
 
 const HomePage = () => {
-
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   const letterVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -76,12 +75,13 @@ const HomePage = () => {
 
   const Gettouch = () => {
     window.scrollTo({
-      top: "80%", // Set the vertical position (adjust as needed)
+      top: "80%", // Adjust the vertical position for smooth scroll
       behavior: "smooth"
     });
   };
+
   const toggleMessage = () => {
-    setShow(!show); // Toggle the state between true and false
+    setShow(!show); // Toggle the message visibility
   };
 
   const nameArray = "FIROZ KHAN".split("");
@@ -177,7 +177,7 @@ const HomePage = () => {
               className="px-10 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full text-lg font-semibold shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-all duration-300 backdrop-blur-lg"
             >
               Explore Work
-              {show==true ? <Message/> : ""}
+              {show && <Message />}
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05 }}
@@ -215,15 +215,8 @@ const HomePage = () => {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ 
-            opacity: [0, 1, 0],
-            y: [0, 10, 0]
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
         >
           <Link to="about" smooth={true} duration={800} className="cursor-pointer">

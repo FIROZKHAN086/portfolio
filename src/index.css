@@ -44,3 +44,9 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-blue-600;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+

@@ -10,13 +10,19 @@ const Message = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
       >
-        <h2 className="text-3xl font-bold text-gray-800 mb-4"> You Scroll Down and Show the Project</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome to My Portfolio!</h2>
         <p className="text-gray-700 text-lg mb-6">
-          This is a cool animated message box that appears when you scroll. It's perfect for notifying users or showing some special content. Scroll down and see how this box gracefully slides up!
+          Hi! I'm a passionate Full Stack Developer focused on creating modern web applications. Scroll down to explore my skills, projects and journey in web development.
         </p>
         <div className="p-4 bg-blue-200 rounded-lg shadow-inner text-gray-800">
           <p>
-            <strong>Important:</strong> This is a custom message with some cool animations! Tailwind CSS and Framer Motion allow you to make smooth interactions easily.
+            <strong>What you'll find below:</strong>
+            <ul className="mt-2 list-disc list-inside">
+              <li>My technical skills and expertise</li>
+              <li>Featured projects and applications</li>
+              <li>Development tools I work with</li>
+              <li>Contact information to connect</li>
+            </ul>
           </p>
         </div>
       </motion.div>

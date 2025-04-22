@@ -4,16 +4,18 @@ import AboutPage from '../Components/About'
 import ProjectsPage from '../pages/Projects'
 import ContactPage from '../pages/Contact'
 import Services from './Services'
+import SmoothScroll from '../Components/SmoothScroll'
 
 const Main = () => {
   return (
-    <div>
-        <HomePage />
-        <AboutPage />
-        <ProjectsPage />
-        <Services/>
-        <ContactPage />
-    </div>
+    <main>
+      <SmoothScroll />
+      <HomePage />
+      <AboutPage />
+      <ProjectsPage />
+      <Services/>
+      <ContactPage />
+    </main>
   )
 }
 

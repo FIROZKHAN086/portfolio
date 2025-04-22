@@ -7,7 +7,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import { AnimatePresence } from 'framer-motion';
 import Main from './pages/Main';
-
+import Footer from './Components/Footer';
 function App() {
   return (
     <div className="App">
@@ -21,7 +21,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </AnimatePresence>
-      
+        <Footer />
     </div>
   );
 }

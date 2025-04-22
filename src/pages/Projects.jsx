@@ -1,7 +1,8 @@
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import React from 'react';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
+import Lenis from '@studio-freight/lenis';
 
 const Projects = () => {
   const containerVariants = {
@@ -28,6 +29,14 @@ const Projects = () => {
   };
 
   const projects = [
+    {
+      title: 'Kings Food',
+      description: 'A modern food delivery website with a user-friendly interface, integrated payment system, and real-time order tracking.',
+      image: '/img/Img4.png', 
+      technologies: ['React', 'Tailwind CSS', 'Firebase', 'Node.js', 'Express'],
+      github: '#', 
+      live: 'https://kings-food.vercel.app/',
+    },
     {
       title: 'Movie App ',
       description: 'A full-featured Movie App  with payment integration and admin dashboard.',
@@ -61,6 +70,29 @@ const Projects = () => {
       live: 'https://zoapto.netlify.app/',
     },
   ];
+
+  useEffect(() => {
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2, // Scroll duration for smoothness
+      easing: 'ease', // Easing function for the scroll
+      smoothWheel: true, // Enable smooth wheel scrolling
+      smoothTouch: true, // Enable smooth touch scrolling
+    });
+
+    // Request animation frame for smooth scroll
+    const animate = () => {
+      lenis.raf();
+      requestAnimationFrame(animate);
+    };
+    
+    // Start the animation loop
+    animate();
+
+    return () => {
+      lenis.destroy(); // Cleanup on component unmount
+    };
+  }, []);
 
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155]">
